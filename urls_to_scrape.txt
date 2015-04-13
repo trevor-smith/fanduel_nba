@@ -1,0 +1,44 @@
+
+
+url_to_scrape = http://stats.nba.com/stats/teamdashlineups?Season=2014-15&SeasonType=Regular+Season&TeamID=1610612752&MeasureType=Base&PerMode=PerGame&PlusMinus=N&PaceAdjust=N&Rank=N&Outcome=&Location=&Month=0&SeasonSegment=&DateFrom=&DateTo=&OpponentTeamID=0&VsConference=&VsDivision=&GameSegment=&Period=0&LastNGames=0&GroupQuantity=5&GameScope=&GameID=
+
+
+
+TeamID=1610612737|Atlanta Hawks
+TeamID=1610612738|Boston Celtics
+TeamID=1610612739|Cleveland Cavaliers
+TeamID=1610612740|New Orleans Pelicans
+TeamID=1610612741|Chicago Bulls
+TeamID=1610612742|Dallas Mavericks
+TeamID=1610612743|Denver Nuggets
+TeamID=1610612744|Golden State Warriors
+TeamID=1610612745|Houston Rockets
+TeamID=1610612746|Los Angeles Clippers
+TeamID=1610612747|Los Angeles Lakers
+TeamID=1610612748|Miami Heat
+TeamID=1610612749|Milwaukee Bucks
+TeamID=1610612750|Minnesota Timberwolves
+TeamID=1610612751|Brooklyn Nets
+TeamID=1610612752|New York Knicks
+TeamID=1610612753|Orlando Magic
+TeamID=1610612754|Indiana Pacers
+TeamID=1610612755|Philadelphia 76ers
+TeamID=1610612756|Phoenix Suns
+TeamID=1610612757|Portland Trail Blazers
+TeamID=1610612758|Sacramento Kings
+TeamID=1610612759|San Antonio Spurs
+TeamID=1610612760|Oklahoma City Thunder
+TeamID=1610612761|Toronto Raptors
+TeamID=1610612762|Utah Jazz
+TeamID=1610612763|Memphis Grizzlies
+TeamID=1610612764|Washington Wizards
+TeamID=1610612765|Detroit Pistons
+TeamID=1610612766|Charlotte Hornets
+
+
+
+http://stats.nba.com/gameDetail.html?GameID=400578735
+https://stats.nba.com/stats/boxscoresummaryv2?GameID=0021400443
+
+
+http://stats.nba.com/stats/boxscoretraditionalv2?EndPeriod=10&EndRange=28800&GameID=0021400443&RangeType=2&Season=2014-15&SeasonType=Regular+Season&StartPeriod=1&StartRange=0
