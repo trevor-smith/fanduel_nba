@@ -89,4 +89,30 @@ residuals = y_test - y_predicted
 residuals.hist(bins=20)
 # plot looks normally distributed...good.
 
+### MOVING AVERAGES ###
+data3['past_1'] = pd.rolling_mean(data3['fanduel_score'], 1)
+data3['past_3'] = pd.rolling_mean(data3['fanduel_score'], 3)
+data3['past_5'] = pd.rolling_mean(data3['fanduel_score'], 5)
+data3['past_10'] = pd.rolling_mean(data3['fanduel_score'], 10)
+
+train, test = train_test_split(data4, train_size = 0.8)
+
+features6 = ['past_1', 'past_3', 'past_5', 'past_10','MIN', 'position_C', u'position_PF', u'position_PG', u'position_SF', u'position_SG', u'position_Unknown',
+             'TO', 'PF', 'venue_H', 'venue_R','Opponent_Bos', u'Opponent_Bro', u'Opponent_Cha', u'Opponent_Chi',
+             u'Opponent_Cle',
+            u'Opponent_Dal', u'Opponent_Den', u'Opponent_Det', u'Opponent_Gol', u'Opponent_Hou', u'Opponent_Ind',
+            u'Opponent_Lac', u'Opponent_Lal', u'Opponent_Mem', u'Opponent_Mia', u'Opponent_Mil', u'Opponent_Min',
+            u'Opponent_Nor', u'Opponent_Nyk', u'Opponent_Okc', u'Opponent_Orl', u'Opponent_Phi', u'Opponent_Pho',
+            u'Opponent_Por', u'Opponent_Sac', u'Opponent_San', u'Opponent_Tor', u'Opponent_Uta', u'Opponent_Was']
+
+x_train = train[features6]
+x_test = test[features6]
+
+y_train = train['fanduel_score']
+y_test = test['fanduel_score']
+
+model_SVR_rbf = SVR(kernel='rbf', C=.5)
+model_SVR_rbf.fit(x_train, y_train)
+model_SVR_rbf.score(x_test, y_test)
+### Score: 0.938
 
