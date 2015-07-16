@@ -69,8 +69,24 @@ print svr_rbf.score(x_train, y_train)
 print zip(features, svr_rbf.coef_)
 ##### score = 0.700
 
+# let's transform our dependent variable
+y_train_log = np.log(y_train)
+y_test_log = np.log(y_test)
+# fill in nan and inf
+y_test_log = np.nan_to_num(y_test_log)
+y_train_log = np.nan_to_num(y_train_log)
+
+# svm - rbf kernel - log transform
+svr_rbf = SVR(kernel='rbf', C=.5)
+svr_rbf.fit(x_train, y_train_log)
+print svr_rbf.score(x_train, y_train_log)
+print zip(features, svr_rbf.coef_)
+##### score = 0.700
+
 ### RESIDUALS ###
 y_predicted = model_SVR.predict(x_test)
 residuals = y_test - y_predicted
 residuals.hist(bins=20)
 # plot looks normally distributed...good.
+
+
