@@ -68,3 +68,9 @@ svr_rbf.fit(x_train, y_train)
 print svr_rbf.score(x_train, y_train)
 print zip(features, svr_rbf.coef_)
 ##### score = 0.700
+
+### RESIDUALS ###
+y_predicted = model_SVR.predict(x_test)
+residuals = y_test - y_predicted
+residuals.hist(bins=20)
+# plot looks normally distributed...good.
