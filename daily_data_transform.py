@@ -39,7 +39,14 @@ def add_moving_averages(column, period):
     period: the number of previous games to be used for the moving average
     """
     column = str(column)
-    new_column_name = "moving_average_"+column
+    new_column_name = "mavg_"+column
     period = int(period)
     df[new_column_name] = pd.rolling_mean(df[column], period)
 
+# create dummies for teams, home vs away, and position
+home_dummies = pd.get_dummies(df.VENUE, prefix='venue')
+position_dummies = pd.get_dummies(df.Position, prefix='position')
+team_dummies = pd.get_dummies(df.OPP_TEAM, prefix='Opponent')
+
+# combining them all together to form new data set
+data = pd.concat([df, home_dummies, position_dummies, team_dummies], axis=1)
